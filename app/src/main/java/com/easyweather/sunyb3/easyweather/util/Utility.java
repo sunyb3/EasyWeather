@@ -10,8 +10,6 @@ import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
-import static android.R.attr.anyDensity;
-import static android.R.attr.y;
 
 /**
  * Created by jyh on 2017/01/04.
