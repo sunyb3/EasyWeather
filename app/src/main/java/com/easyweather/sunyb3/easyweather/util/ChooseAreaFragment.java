@@ -28,7 +28,7 @@ import java.util.List;
 import okhttp3.Call;
 import okhttp3.Response;
 
-import static android.R.string.ok;
+
 
 /**
  * Created by jyh on 2017/01/04.
@@ -147,7 +147,7 @@ public class ChooseAreaFragment extends Fragment {
             currentLevel = LEVEL_CITY;
         } else {
             int provinceCode = selectedProvince.getProvinceCode();
-            String address = "http://guolin.tech/api/china" + provinceCode;
+            String address = "http://guolin.tech/api/china/" + provinceCode;
             queryFormServer(address, "city");
 
         }
@@ -172,7 +172,7 @@ public class ChooseAreaFragment extends Fragment {
         } else {
             int provinceCode = selectedProvince.getProvinceCode();
             int cityCode = selectedCity.getCityCode();
-            String address = "http://guolin.tech/api/china" + provinceCode + "/" + cityCode;
+            String address = "http://guolin.tech/api/china/" + provinceCode + "/" + cityCode;
             queryFormServer(address, "county");
 
         }
