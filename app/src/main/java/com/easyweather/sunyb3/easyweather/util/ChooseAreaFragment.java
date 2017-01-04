@@ -29,7 +29,6 @@ import okhttp3.Call;
 import okhttp3.Response;
 
 
-
 /**
  * Created by jyh on 2017/01/04.
  */
@@ -198,24 +197,24 @@ public class ChooseAreaFragment extends Fragment {
 
             @Override
             public void onResponse(Call call, Response response) throws IOException {
-                if (response != null) {
-                    closeProgressDialog();
-                }
                 String responseText = response.body().string();
                 boolean result = false;
                 if ("province".equals(type)) {
                     result = Utility.handleProvinceResponse(responseText);
+
                 } else if ("city".equals(type)) {
                     result = Utility.handleCityResponse(responseText, selectedProvince.getId());
-
+                    closeProgressDialog();
                 } else if ("county".equals(type)) {
                     result = Utility.handleCountyResponse(responseText, selectedCity.getId());
-                }
 
+                }
                 if (result) {
                     getActivity().runOnUiThread(new Runnable() {
+
                         @Override
                         public void run() {
+                            closeProgressDialog();
                             if ("province".equals(type)) {
                                 queryProvinces();
                             } else if ("city".equals(type)) {
