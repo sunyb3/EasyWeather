@@ -6,6 +6,4 @@
         <mapping class="com.easyweather.sunyb3.easyweather.db.City" />
         <mapping class=" com.easyweather.sunyb3.easyweather.db.County" />
     </list>
-
-
 </litepal>
