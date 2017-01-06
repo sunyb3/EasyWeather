@@ -7,6 +7,8 @@ import static android.R.string.ok;
 
 /**
  * Created by jyh on 2017/01/04.
+ *
+ * URL    https://free-api.heweather.com/v5/weather?city=beijing&key=e93add9e797746e8b6c1c262aeec1013
  */
 
 public class HttpUtil {
