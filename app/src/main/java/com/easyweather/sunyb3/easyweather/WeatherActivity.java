@@ -6,22 +6,16 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
-import android.webkit.WebView;
 import android.widget.LinearLayout;
 import android.widget.ScrollView;
 import android.widget.TextView;
 import android.widget.Toast;
-
 import com.easyweather.sunyb3.easyweather.gson.Forecast;
 import com.easyweather.sunyb3.easyweather.gson.Now;
 import com.easyweather.sunyb3.easyweather.gson.Weather;
 import com.easyweather.sunyb3.easyweather.util.HttpUtil;
 import com.easyweather.sunyb3.easyweather.util.Utility;
-
-import org.w3c.dom.Text;
-
 import java.io.IOException;
-
 import okhttp3.Call;
 import okhttp3.Callback;
 import okhttp3.Response;
