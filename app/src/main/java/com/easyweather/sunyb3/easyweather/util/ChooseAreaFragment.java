@@ -15,6 +15,7 @@ import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.easyweather.sunyb3.easyweather.MainActivity;
 import com.easyweather.sunyb3.easyweather.R;
 import com.easyweather.sunyb3.easyweather.WeatherActivity;
 import com.easyweather.sunyb3.easyweather.db.City;
@@ -95,11 +96,25 @@ public class ChooseAreaFragment extends Fragment {
                     queryCounties();
                 } else if (currentLevel == LEVEL_COUNTY) {
                     String weatherId = countyList.get(position).getWeatherId();
-                    Intent intent = new Intent(getActivity(), WeatherActivity.class);
-                    intent.putExtra("weatherId", weatherId);
-                    startActivity(intent);
-                    getActivity().finish();
+if (getActivity() instanceof MainActivity){
+
+    Intent intent = new Intent(getActivity(), WeatherActivity.class);
+    intent.putExtra("weather_id", weatherId);
+    startActivity(intent);
+    getActivity().finish();
+
+
+}else if (getActivity() instanceof  WeatherActivity){
+
+    WeatherActivity activity= (WeatherActivity) getActivity();
+    activity.drawerLayout.closeDrawers();
+    activity.swipeRefresh.setRefreshing(true);
+    activity.requestWeather(weatherId);
+
+
+}
                 }
+
             }
         });
         backButton.setOnClickListener(new View.OnClickListener() {
